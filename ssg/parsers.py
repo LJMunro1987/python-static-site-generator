@@ -4,7 +4,9 @@ from typing import List
 from pathlib import Path
 
 class Parser:
+    # Empty Arrays are created like the below:
     extensions: List[str] = []
+
     def valid_extension(self, extension):
         return extension in self.extensions
 
@@ -22,3 +24,10 @@ class Parser:
 
     def copy(self, path, source, dest):
         shutil.copy2(path, dest / path.relative_to(source))
+
+class ResourceParser(Parser):
+    # Pre-Defined arrays are created like this:
+    extensions: = [".jpg", ".png", ".gif", ".css", ".html"]
+
+    def parse(self, path: Path, source: Path, dest: Path):
+        copy(path, source, dest)
