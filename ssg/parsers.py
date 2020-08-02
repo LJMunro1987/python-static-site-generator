@@ -40,5 +40,5 @@ class MarkdownParser(Parser):
     extensions = [".md", ".markdown"]
 
     def parse(self, path, source, dest):
-        contenct = Content.load(self.read(path))
+        content = Content.load(self.read(path))
         html = self.markdown(content.body)
